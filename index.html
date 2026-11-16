@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Manager with API Integration</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="top">
+    <h1>Task Manager</h1>
+    <p>Async JavaScript, DOM manipulation and API integration</p>
+  </header>
+
+  <main>
+    <!-- Task 1: Async practice -->
+    <section class="card" id="async-section">
+      <h2>1. Async JavaScript practice</h2>
+      <div class="btn-row">
+        <button data-demo="order">Execution order</button>
+        <button data-demo="timeout">setTimeout (3s)</button>
+        <button data-demo="countdown">setInterval countdown</button>
+        <button data-demo="callback">Callback</button>
+        <button data-demo="promise">Promise</button>
+        <button data-demo="async">Async/Await</button>
+        <button data-demo="clear" class="ghost">Clear</button>
+      </div>
+      <pre id="asyncOutput" aria-live="polite">Press a button to run a demo.</pre>
+    </section>
+
+    <!-- Task 2: Local todo app -->
+    <section class="card" id="todo-section">
+      <h2>2. My tasks</h2>
+      <form id="todoForm" class="inline-form">
+        <input id="todoInput" type="text" placeholder="What needs to be done?" autocomplete="off">
+        <button type="submit">Add task</button>
+      </form>
+      <p id="todoError" class="msg error" hidden></p>
+      <div class="stats" id="todoStats"></div>
+      <ul id="todoList" class="list"></ul>
+    </section>
+
+    <!-- Task 3 + 4: API todos -->
+    <section class="card" id="api-section">
+      <h2>3. API todos (JSONPlaceholder)</h2>
+      <div class="btn-row">
+        <button data-filter="all" class="filter active">All</button>
+        <button data-filter="completed" class="filter">Completed</button>
+        <button data-filter="pending" class="filter">Pending</button>
+        <button id="refreshBtn" class="ghost">Refresh</button>
+      </div>
+      <input id="searchInput" type="search" placeholder="Search by title" autocomplete="off">
+      <p id="apiStatus" class="msg" role="status"></p>
+      <ul id="apiList" class="list scroll"></ul>
+    </section>
+  </main>
+
+  <script src="async-practice.js"></script>
+  <script src="todo.js"></script>
+  <script src="api.js"></script>
+</body>
+</html>
